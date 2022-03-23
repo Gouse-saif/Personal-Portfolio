@@ -132,11 +132,9 @@ header {
 .toggle::after {
   position: absolute;
   content: "";
+  background: url("/assets/image/moon.png");
   width: 25px;
   height: 25px;
-  background: url("/assets/image/moon.png") center;
-  -o-object-fit: cover;
-     object-fit: cover;
   top: 3px;
   left: 3px;
   transition: all 0.5s;
@@ -145,9 +143,7 @@ header {
 
 .checkbox:checked + .toggle::after {
   left: 34px;
-  background: url("/assets/image/sun4.png") center;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background: url("/assets/image/sun4.png");
 }
 
 .checkbox {
