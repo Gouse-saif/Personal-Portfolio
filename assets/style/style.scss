@@ -1,0 +1,503 @@
+/* =================== TYPOGRAPHY ===================*/
+@import url("https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&family=Supermercado+One&display=swap");
+// font-family: 'Supermercado One', cursive;
+// font-family: 'Roboto Mono', monospace;
+
+/* =================== CSS RESET {BASE} ===================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+.container {
+  padding-inline: 2em;
+}
+
+/* =================== CSS VARIABLES ===================*/
+:root {
+  --bg-clr: #0a0f44;
+  --light-text-clr: #f5f4f4;
+  --text-clr: #9b6cdd;
+
+  --ff-para: Roboto Mono, monospace;
+  --ff-title: Supermercado One, cursive;
+}
+
+/* =================== Theme ===================*/
+.lightmode {
+  --bg-clr: #f5f4f4;
+  --light-text-clr: #0a0f44;
+}
+
+body {
+  background-color: var(--bg-clr);
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@mixin Flex__Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin Glass__Morp {
+  background: rgba(85, 10, 129, 0.2);
+  box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  // border-bottom: 2px solid rgba(85, 10, 129, 0.5);
+}
+
+/* =================== Start Of Styling Header ===================*/
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0.35em 0;
+  @include Flex__Center();
+  justify-content: space-between;
+  transition: all 0.2s linear;
+}
+
+/* =================== SCRIPT CLASS header__color ===================*/
+
+.header__Color {
+  // Glassmorphism code
+  @include Glass__Morp();
+  border-bottom: 2px solid rgba(85, 10, 129, 0.5);
+}
+
+.theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2em;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+
+  @include Glass__Morp();
+  border: 2px solid rgba(85, 10, 129, 0.4);
+  border-radius: 30px;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: url("/assets/image/moon.png");
+    top: 3px;
+    left: 3px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+}
+
+.checkbox:checked + .toggle::after {
+  left: 34px;
+  background: url("/assets/image/sun4.png");
+}
+// .checkbox:checked + .toggle {
+// }
+.checkbox {
+  display: none;
+}
+
+.logo__img {
+  width: 3em;
+}
+
+/* =================== Navbar Nested Query ===================*/
+
+.navbar {
+  position: fixed;
+  bottom: 1%;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  // Glassmorphism code
+  @include Glass__Morp();
+  border: 2px solid rgba(85, 10, 129, 0.5);
+  border-radius: 10px;
+
+  .nav__menu .nav__item {
+    width: 360px;
+    height: 65px;
+    @include Flex__Center();
+
+    .nav__list {
+      padding: 0 1em;
+
+      .nav__link {
+        display: grid;
+        place-items: center;
+        color: var(--light-text-clr);
+
+        .link__name {
+          font-size: 0.9em;
+          font-family: var(--ff-para);
+          font-weight: 900;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+/* =================== End Of Styling Header ===================*/
+
+/* =================== Start Of Styling Hero ===================*/
+
+.hero,
+.card__stack {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  gap: 1em;
+  position: relative;
+}
+
+.card {
+  width: 340px;
+  height: 400px;
+  @include Glass__Morp();
+  border-radius: 10px;
+  border: 2px solid rgba(85, 10, 129, 0.5);
+  // transform: translateY(0);
+  span {
+    color: var(--text-clr);
+    text-align: center;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  // &::before{
+  //   position: absolute;
+  //   content: "";
+  //   top: 0;
+  //   left: 0;
+  //   width: 50%;
+  //   height: 100%;
+  //   background: rgba($color: #ffffff, $alpha: .1);
+  // }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($color: #ffffff, $alpha: 0.4),
+      transparent
+    );
+    // transform: skewX(55deg);
+    transition: 0.5s;
+    transition-delay: 0.3s;
+  }
+  &:hover::after {
+    left: 100%;
+  }
+}
+
+/* =================== Card No One ===================*/
+
+.card.one {
+  @include Flex__Center();
+  flex-direction: column;
+  justify-content: space-around;
+
+  .hero__name h1 {
+    color: var(--text-clr);
+    font-family: var(--ff-title);
+  }
+
+  .hero__image {
+    background: url("/assets/image/Virat.png") no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 240px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-color: var(--text-clr);
+  }
+
+  .hero__profession {
+    font-size: 1.45em;
+    font-weight: 600;
+    color: var(--text-clr);
+    font-family: var(--ff-para);
+  }
+}
+
+/* =================== Card No Two ===================*/
+
+.card.two {
+  @include Flex__Center();
+  flex-direction: column;
+  justify-content: space-around;
+
+  .hero__name h1 {
+    color: var(--text-clr);
+    font-family: var(--ff-title);
+  }
+
+  .hero__image {
+    background: url("/assets/image/Ubed.png") no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 240px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-color: var(--text-clr);
+  }
+
+  .hero__profession {
+    font-size: 1.45em;
+    font-weight: 600;
+    color: var(--text-clr);
+    font-family: var(--ff-para);
+  }
+}
+
+/* =================== Card No Three ===================*/
+
+.card.three {
+  @include Flex__Center();
+  flex-direction: column;
+  justify-content: space-around;
+
+  .hero__name h1 {
+    color: var(--text-clr);
+    font-family: var(--ff-title);
+  }
+
+  .hero__image {
+    background: url("/assets/image/Ali.png") no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 240px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-color: var(--text-clr);
+  }
+
+  .hero__profession {
+    font-size: 1.45em;
+    font-weight: 600;
+    color: var(--text-clr);
+    font-family: var(--ff-para);
+    text-align: center;
+  }
+}
+
+/* =================== End Of Styling Hero ===================*/
+
+/* =================== Start Of Styling About Us ===================*/
+
+.about {
+  width: 100%;
+  min-height: 100vh;
+}
+.heading__container {
+  // position: relative;
+  // z-index: 2;
+  display: grid;
+  justify-content: center;
+
+  h1,
+  h2 {
+    text-align: center;
+    color: var(--text-clr);
+    font-family: var(--ff-title);
+    margin-block-end: 0.9em;
+  }
+}
+
+.folded__card__container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 2em;
+}
+
+.folded__card {
+  margin: auto;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  @include Glass__Morp();
+  border: 2px solid rgba(85, 10, 129, 0.5);
+  transform-style: preserve-3d;
+  transform-style: preserve-3d(1000px);
+  transition: 1s;
+  border-radius: 10px;
+
+
+  // &:hover{
+  //   transform: translateX(50%);
+  // }
+}
+
+.img__card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  background: var(--text-clr);
+  transition: 1s;
+  border-radius: 10px;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+}
+
+.folded__card:hover .img__card {
+  // transform: rotateY(-180deg);
+  transform: rotateY(90deg);
+}
+
+.img__card_desc .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+
+  h1,
+  p {
+    font-family: var(--ff-title);
+    text-align: center;
+    color: var(--text-clr);
+    margin-block-end: 1em;
+  }
+  .icon {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1em;
+    a {
+      padding: 0.45em 0.45em 0 0.45em;
+      @include Glass__Morp();
+      border: 2px solid rgba(85, 10, 129, 0.4);
+      border-radius: 10px;
+      color: var(--text-clr);
+    }
+  }
+
+  .download__btn a {
+    @include Glass__Morp();
+    border: 2px solid rgba(85, 10, 129, 0.4);
+    border-radius: 10px;
+    padding: 0.6em 1em;
+    color: var(--text-clr);
+    font-family: var(--ff-title);
+    font-weight: 600;
+  }
+}
+
+/* =================== End Of Styling About Us ===================*/
+
+/* =================== Start Of Styling Skill ===================*/
+
+.skill {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =================== End Of Styling Skill ===================*/
+
+/* =================== Start Of Styling Work ===================*/
+
+.work {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =================== End Of Styling Work ===================*/
+
+/* =================== Start Of Styling Contact ===================*/
+
+.contact {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =================== End Of Styling Contact ===================*/
