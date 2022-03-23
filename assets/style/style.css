@@ -208,6 +208,7 @@ header {
 }
 
 .card {
+  margin-top: 3.5em;
   width: 340px;
   height: 400px;
   background: rgba(85, 10, 129, 0.2);

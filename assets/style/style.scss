@@ -221,6 +221,7 @@ header {
 }
 
 .card {
+  margin-top: 3.5em;
   width: 340px;
   height: 400px;
   @include Glass__Morp();
