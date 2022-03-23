@@ -251,7 +251,6 @@ header {
   font-family: var(--ff-title);
 }
 .card.one .hero__image {
-  background: url("/assets/image/Virat.png") no-repeat;
   background-size: contain;
   width: 200px;
   height: 240px;
@@ -278,7 +277,7 @@ header {
   font-family: var(--ff-title);
 }
 .card.two .hero__image {
-  background: url("/assets/image/Ubed.png") no-repeat;
+  background: url("/assets/image/Ubed.png") no-repeat center center;
   background-size: contain;
   width: 200px;
   height: 240px;
@@ -305,7 +304,7 @@ header {
   font-family: var(--ff-title);
 }
 .card.three .hero__image {
-  background: url("/assets/image/Ali.png") no-repeat;
+  background: url("/assets/image/Ali.png") no-repeat center center;
   background-size: contain;
   width: 200px;
   height: 240px;
