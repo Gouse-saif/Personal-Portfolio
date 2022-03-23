@@ -144,7 +144,8 @@ header {
     content: "";
     width: 25px;
     height: 25px;
-    background: url("/assets/image/moon.png");
+    background: url("/assets/image/moon.png") center;
+    object-fit: cover;
     top: 3px;
     left: 3px;
     transition: all 0.5s;
@@ -154,7 +155,8 @@ header {
 
 .checkbox:checked + .toggle::after {
   left: 34px;
-  background: url("/assets/image/sun4.png");
+  background: url("/assets/image/sun4.png") center;
+  object-fit: cover;
 }
 // .checkbox:checked + .toggle {
 // }
@@ -354,6 +356,8 @@ header {
 }
 
 /* =================== End Of Styling Hero ===================*/
+
+
 
 /* =================== Start Of Styling About Us ===================*/
 
