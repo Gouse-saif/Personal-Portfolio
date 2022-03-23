@@ -250,10 +250,11 @@ header {
   color: var(--text-clr);
   font-family: var(--ff-title);
 }
-.card.one .hero__image {
-  background-size: contain;
+.card.one .hero__image img {
   width: 200px;
   height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
   background-color: var(--text-clr);
 }
@@ -276,11 +277,11 @@ header {
   color: var(--text-clr);
   font-family: var(--ff-title);
 }
-.card.two .hero__image {
-  background: url("/assets/image/Ubed.png") no-repeat center center;
-  background-size: contain;
+.card.two .hero__image img {
   width: 200px;
   height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
   background-color: var(--text-clr);
 }
@@ -303,11 +304,11 @@ header {
   color: var(--text-clr);
   font-family: var(--ff-title);
 }
-.card.three .hero__image {
-  background: url("/assets/image/Ali.png") no-repeat center center;
-  background-size: contain;
+.card.three .hero__image img {
   width: 200px;
   height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
   background-color: var(--text-clr);
 }

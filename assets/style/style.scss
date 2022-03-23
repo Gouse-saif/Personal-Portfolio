@@ -279,13 +279,13 @@ header {
     font-family: var(--ff-title);
   }
 
-  .hero__image {
-    // background: url("/assets/image/Virat.png") no-repeat center center;
-    background-size: contain;
+  .hero__image img{
     width: 200px;
     height: 240px;
+    object-fit: cover;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     background-color: var(--text-clr);
+    
   }
 
   .hero__profession {
@@ -308,11 +308,10 @@ header {
     font-family: var(--ff-title);
   }
 
-  .hero__image {
-    background: url("/assets/image/Ubed.png") no-repeat center center;
-    background-size: contain;
+  .hero__image img{
     width: 200px;
     height: 240px;
+    object-fit: cover;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     background-color: var(--text-clr);
   }
@@ -337,11 +336,10 @@ header {
     font-family: var(--ff-title);
   }
 
-  .hero__image {
-    background: url("/assets/image/Ali.png") no-repeat center center;
-    background-size: contain;
+  .hero__image img{
     width: 200px;
     height: 240px;
+    object-fit: cover;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     background-color: var(--text-clr);
   }
