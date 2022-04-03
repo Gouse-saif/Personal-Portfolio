@@ -142,7 +142,7 @@ header {
   &::after {
     position: absolute;
     content: "";
-    background: url("/assets/image/moon.png");
+    background: url("/assets/image/Theme-images/moon-1.svg");
     width: 25px;
     height: 25px;
     top: 3px;
@@ -154,7 +154,7 @@ header {
 
 .checkbox:checked + .toggle::after {
   left: 34px;
-  background: url("/assets/image/sun4.png");
+  background: url("/assets/image/Theme-images/sun-2.svg");
 }
 // .checkbox:checked + .toggle {
 // }
@@ -290,6 +290,7 @@ header {
   }
 
   .hero__profession {
+    text-align: center;
     font-size: 1.45em;
     font-weight: 600;
     color: var(--text-clr);
@@ -443,12 +444,20 @@ header {
   place-items: center;
 
 
-  h1,
-  p {
+  h1{
     font-family: var(--ff-title);
     text-align: center;
-    color: var(--text-clr);
-    margin-block-end: 1em;
+    color: var(--light-text-clr);
+    // margin-block-end: 1em;
+  }
+  .about__me__para{
+    font-size: 1.2em;
+    font-family: var(--ff-para);
+    font-weight: 800;
+    text-align: center;
+    color: var(--light-text-clr);
+    // margin-block-end: 1em;
+
   }
   .icon {
     display: flex;
@@ -459,7 +468,7 @@ header {
       @include Glass__Morp();
       border: 2px solid rgba(85, 10, 129, 0.4);
       border-radius: 10px;
-      color: var(--text-clr);
+      color: var(--light-text-clr);
     }
   }
 
@@ -468,7 +477,7 @@ header {
     border: 2px solid rgba(85, 10, 129, 0.4);
     border-radius: 10px;
     padding: 0.6em 1em;
-    color: var(--text-clr);
+    color: var(--light-text-clr);
     font-family: var(--ff-title);
     font-weight: 600;
   }
