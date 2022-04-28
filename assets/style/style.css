@@ -133,7 +133,7 @@ header {
 .toggle::after {
   position: absolute;
   content: "";
-  background: url("/assets/image/Theme-images/moon-1.svg");
+  background: url("/assets/image/Theme-images/moon.png");
   width: 25px;
   height: 25px;
   top: 3px;
@@ -144,7 +144,7 @@ header {
 
 .checkbox:checked + .toggle::after {
   left: 34px;
-  background: url("/assets/image/Theme-images/sun-3.svg");
+  background: url("/assets/image/Theme-images/sun.png");
 }
 
 .checkbox {
