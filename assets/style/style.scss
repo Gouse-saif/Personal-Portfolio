@@ -69,6 +69,8 @@ body {
   --light-text-clr: #f5f4f4;
   --text-clr: #9b6cdd;
 
+  --an-clr: #845bbd;
+
   --ff-para: Roboto Mono, monospace;
   --ff-title: Supermercado One, cursive;
 }
@@ -107,7 +109,7 @@ section {
 header {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   padding: 0.35em 0;
   @include Flex__Center();
@@ -154,7 +156,7 @@ header {
 
 .checkbox:checked + .toggle::after {
   left: 34px;
-  background: url("/assets/image/Theme-images/sun-2.svg");
+  background: url("/assets/image/Theme-images/sun-3.svg");
 }
 // .checkbox:checked + .toggle {
 // }
@@ -172,7 +174,7 @@ header {
   position: fixed;
   bottom: 1%;
   left: 50%;
-  z-index: 1;
+  z-index: 2;
   transform: translateX(-50%);
   // Glassmorphism code
   @include Glass__Morp();
@@ -190,7 +192,7 @@ header {
       .nav__link {
         display: grid;
         place-items: center;
-        color: var(--light-text-clr);
+        color: var(--text-clr);
 
         .link__name {
           font-size: 0.9em;
@@ -202,6 +204,11 @@ header {
     }
   }
 }
+
+// .bx-tada-hover:hover{
+//   color: var(--text-clr);
+// }
+
 
 /* =================== End Of Styling Header ===================*/
 
@@ -280,13 +287,12 @@ header {
     font-family: var(--ff-title);
   }
 
-  .hero__image img{
+  .hero__image img {
     width: 200px;
     height: 240px;
     object-fit: cover;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     background-color: var(--text-clr);
-    
   }
 
   .hero__profession {
@@ -310,7 +316,7 @@ header {
     font-family: var(--ff-title);
   }
 
-  .hero__image img{
+  .hero__image img {
     width: 200px;
     height: 240px;
     object-fit: cover;
@@ -338,7 +344,7 @@ header {
     font-family: var(--ff-title);
   }
 
-  .hero__image img{
+  .hero__image img {
     width: 200px;
     height: 240px;
     object-fit: cover;
@@ -356,8 +362,6 @@ header {
 }
 
 /* =================== End Of Styling Hero ===================*/
-
-
 
 /* =================== Start Of Styling About Us ===================*/
 
@@ -399,7 +403,6 @@ header {
   transition: 1s;
   border-radius: 10px;
 
-
   // &:hover{
   //   transform: translateX(50%);
   // }
@@ -415,7 +418,7 @@ header {
   background: var(--text-clr);
   transition: 1s;
   border-radius: 10px;
-
+  cursor: pointer;
   img {
     position: absolute;
     left: 0;
@@ -426,6 +429,7 @@ header {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 10px;
+    background-color: #9b6cdd;
   }
 }
 
@@ -443,21 +447,20 @@ header {
   display: grid;
   place-items: center;
 
-
-  h1{
+  h1 {
     font-family: var(--ff-title);
     text-align: center;
-    color: var(--light-text-clr);
+    color: var(--text-clr);
     // margin-block-end: 1em;
   }
-  .about__me__para{
+  .about__me__para {
     font-size: 1.2em;
     font-family: var(--ff-para);
     font-weight: 800;
     text-align: center;
     color: var(--light-text-clr);
+    line-height: 1.2;
     // margin-block-end: 1em;
-
   }
   .icon {
     display: flex;
@@ -492,7 +495,363 @@ header {
   min-height: 100vh;
 }
 
+.skill__wrapper {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+
+.skill__container {
+  // width: 40%;
+  min-width: 450px;
+}
+
+.skill__content__container {
+  width: 100%;
+  padding: 1.4em 1em;
+  background-color: rgba($color: #ffffff, $alpha: 0.06);
+  @include Glass__Morp();
+  // box-shadow: 0 20px 30px rgba($color: #000000, $alpha: 0.2);
+  border-radius: 8px;
+
+  .skill__title {
+    color: var(--light-text-clr);
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: var(--ff-para);
+  }
+  .skills:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  span {
+    color: var(--text-clr);
+  }
+}
+
+.bar {
+  position: relative;
+  background-color: rgba($color: #ffffff, $alpha: 0.06);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 0.45em 1em;
+  border: 1px solid var(--text-clr);
+}
+
+.bar div {
+  position: relative;
+  width: 0;
+  height: 5px;
+  background-color: var(--text-clr);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(155, 108, 221, 0.6);
+}
+
+#html__bar {
+  animation: html-fill-bar 2s forwards;
+}
+@keyframes html-fill-bar {
+  100% {
+    width: 95%;
+  }
+}
+
+#css__bar {
+  animation: css-fill-bar 2s forwards;
+}
+@keyframes css-fill-bar {
+  100% {
+    width: 75%;
+  }
+}
+
+#javascript__bar {
+  animation: javascript-fill-bar 2s forwards;
+}
+
+@keyframes javascript-fill-bar {
+  100% {
+    width: 65%;
+  }
+}
+
+#UIUX__bar {
+  animation: uiux-fill-bar 2s forwards;
+}
+
+@keyframes uiux-fill-bar {
+  100% {
+    width: 70%;
+  }
+}
+
+#network__bar {
+  animation: network-fill-bar 2s forwards;
+}
+
+@keyframes network-fill-bar {
+  100% {
+    width: 90%;
+  }
+}
+
+// professional__skill__container styling
+.professional__skill__container {
+  display: grid;
+  place-items: center;
+}
+
+.professional__container {
+  position: relative;
+  overflow: hidden;
+  // width: 40%;
+  min-width: 450px;
+  display: grid;
+  grid-template-columns: 1fr;
+  // grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+  gap: 1em;
+  cursor: pointer;
+  @include Glass__Morp();
+
+  .prof__skill__title {
+    color: var(--light-text-clr);
+    text-align: center;
+    font-family: var(--ff-para);
+    letter-spacing: 2px;
+    margin-block-start: 0.45em;
+  }
+
+  .professional__box {
+    text-align: center;
+    color: var(--text-clr);
+    padding: 1em 2em;
+
+    h3 {
+      font-family: var(--ff-title);
+    }
+    p {
+      font-family: var(--ff-para);
+    }
+  }
+}
+
+// .tron-button {
+//   background: #1a1a1a;
+//   color: #ff4163;
+//   display: inline-block;
+//   overflow: hidden;
+//   padding: 15px 25px;
+//   position: relative;
+//   text-transform: uppercase;
+//   text-decoration: none;
+// }
+
+// 9b6cdd
+.tron-button__left-line {
+  animation: up 1s infinite;
+  background: linear-gradient(to top, rgba(155, 108, 221, 0.3), #9b6cdd);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+}
+
+@keyframes up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.tron-button__top-line {
+  animation: right 1s 0.5s infinite;
+  background: linear-gradient(to right, rgba(155, 108, 221, 0.3), #9b6cdd);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+}
+
+@keyframes right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.tron-button__right-line {
+  animation: bottom 1s infinite;
+  background: linear-gradient(to bottom, rgba(155, 108, 221, 0.3), #9b6cdd);
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+}
+
+@keyframes bottom {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.tron-button__bottom-line {
+  animation: left 1s 0.5s infinite;
+  background: linear-gradient(to left, rgba(155, 108, 221, 0.3), #9b6cdd);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+}
+
+@keyframes left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .skill__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .skill__container {
+    min-width: 340px;
+  }
+  .professional__container {
+    min-width: 340px;
+  }
+}
 /* =================== End Of Styling Skill ===================*/
+
+/* =================== Start Of Styling Services ===================*/
+
+.service {
+  width: 100%;
+  min-height: 100vh;
+  padding-block-end: 2em;
+}
+.service__container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.service__container .service__card .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--text-clr);
+}
+
+.service__container .service__card .icon .bx {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  color: #f5f4f4;
+}
+
+.service__container .service__card .slide {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.service__container .service__card .slide.slide1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: 0.7s;
+  transform: translateY(100px);
+}
+
+.service__container .service__card:hover .slide.slide1 {
+  transform: translateY(0px);
+}
+
+.service__container .service__card .slide.slide2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.8s;
+  transform: translateY(-100px);
+  @include Glass__Morp();
+  border: 0.5px solid var(--text-clr);
+}
+
+.service__container .service__card:hover .slide.slide2 {
+  transform: translateY(0);
+}
+
+.service__container .service__card .slide.slide2::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  bottom: 15px;
+  left: 50%;
+  // left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-clr);
+}
+
+.service__container .service__card .slide.slide2 .content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: var(--text-clr);
+  font-family: var(--ff-para);
+}
+
+.service__container .service__card .slide.slide2 .content h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 24px;
+  text-align: center;
+  color: var(--text-clr);
+  font-family: var(--ff-title);
+}
+
+/* =================== End Of Styling Services ===================*/
 
 /* =================== Start Of Styling Work ===================*/
 
@@ -501,13 +860,315 @@ header {
   min-height: 100vh;
 }
 
+.work__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  row-gap: 0.45em;
+}
+
+.work__btn__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45em 2em;
+  cursor: pointer;
+
+  .work__btn {
+    color: var(--text-clr);
+    font-size: 1.2em;
+    font-family: var(--ff-title);
+    @include Glass__Morp();
+    border-radius: 30px;
+    border: 1px solid var(--text-clr);
+    padding: 0.2em 1.2em;
+    transition: background, color 0.5s;
+
+    &:hover {
+      background-color: var(--text-clr);
+      color: var(--light-text-clr);
+    }
+  }
+}
+
+.portfolio__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  place-items: center;
+  gap: 2em;
+
+  .portfolio__card {
+    width: 25em;
+    height: 300px;
+    @include Glass__Morp();
+    border-radius: 8px;
+    border: 0.5px solid var(--text-clr);
+    cursor: pointer;
+    overflow: hidden;
+    .work__image {
+      width: max-content;
+      height: auto;
+      display: block;
+      border-radius: 8px 8px 8px 8px;
+    }
+
+    .work__content {
+      display: flex;
+      justify-content: space-around;
+      margin-block-start: 1.45em;
+
+      h2,
+      a,
+      i {
+        color: var(--text-clr);
+        font-family: var(--ff-para);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .portfolio__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .portfolio__card {
+      width: 21em;
+      height: 250px;
+    }
+  }
+}
+
 /* =================== End Of Styling Work ===================*/
+
+/* =================== Start Of Styling Testimonial ===================*/
+
+.testimonial {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.testimonial__card{
+  @include Glass__Morp();
+  border: 0.5px solid var(--text-clr);
+  padding: 1.25em 1em;
+  border-radius: 8px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  color: var(--text-clr);
+}
+.test__img{
+  margin: auto;
+  width: 100px;
+  border-radius: 3em;
+  margin-bottom: 1em;
+}
+.testimonial__name{
+  font-size: 1.5em;
+  font-family: var(--ff-title);
+  text-align: center;
+  margin-bottom: .25em;
+}
+.testimonial__description{
+  font-size: 1.2em;
+  font-family: var(--ff-para);
+  text-align: center;
+}
+
+// SWIPER class
+.swiper-pagination-bullet{
+  padding: .30em;
+}
+.swiper-pagination-bullet-active{
+  background-color: var(--text-clr);
+}
+
+@media screen and (max-width: 365px) {
+  .name{
+    font-size: 1.274em;
+  }
+}
+
+/* =================== End Of Styling Testimonial ===================*/
 
 /* =================== Start Of Styling Contact ===================*/
 
 .contact {
   width: 100%;
   min-height: 100vh;
+  padding-block-end: 1em;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  row-gap: 1em;
+}
+
+.social__media__container {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  flex-direction: column;
+  row-gap: 1em;
+
+  h2 {
+    color: var(--text-clr);
+    text-align: center;
+    font-family: var(--ff-para);
+  }
+
+  .gmail__container,
+  .whatsapp__container,
+  .telegram__container {
+    text-align: center;
+    color: var(--text-clr);
+    padding: 1em 2em;
+    @include Glass__Morp();
+    border: 0.5px solid var(--text-clr);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.45em;
+    font-family: var(--ff-para);
+
+    .connect__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        color: var(--text-clr);
+        margin-inline-end: 0.35em;
+        font-size: 1.3em;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.form__container {
+  // width: max-content;
+  display: grid;
+  place-items: center;
+  h2 {
+    color: var(--text-clr);
+    font-family: var(--ff-para);
+    margin-block-end: 0.45em;
+    text-align: center;
+  }
+}
+form {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  padding: 3em 2em;
+  @include Glass__Morp();
+  border: 0.5px solid var(--text-clr);
+  border-radius: 8px;
+}
+
+.input__box {
+  position: relative;
+  font-family: var(--ff-para);
+  margin-top: 10px;
+
+  span {
+    position: absolute;
+    left: 0;
+    color: var(--text-clr);
+    transition: transform 500ms;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--text-clr);
+  color: var(--text-clr);
+  font-family: var(--ff-para);
+  font-weight: 900;
+}
+
+.input__box input:focus ~ span,
+.input__box input:valid ~ span,
+.input__box textarea:focus ~ span,
+.input__box textarea:valid ~ span {
+  color: var(--text-clr);
+  transform: translateY(-2em);
+}
+
+button {
+  border: 0.5px solid var(--text-clr);
+  background-color: transparent;
+  padding: 0.8em 1.4em;
+  color: var(--text-clr);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  form {
+    width: 340px;
+  }
 }
 
 /* =================== End Of Styling Contact ===================*/
+
+/* =================== Start Of Styling Footer ===================*/
+
+footer {
+  width: 100%;
+  min-height: 50vh;
+  background-color: var(--text-clr);
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  row-gap: 2em;
+  font-family: var(--ff-title);
+
+  h2 {
+    color: #0a0f44;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .footer__link {
+    @include Flex__Center();
+    flex-wrap: wrap;
+    column-gap: 0.8em;
+    li > a {
+      color: #0a0f44;
+      font-weight: 900;
+      font-family: var(--ff-para);
+    }
+  }
+
+  .footer__icon {
+    @extend .footer__link;
+  }
+
+  p {
+    text-align: center;
+    font-family: var(--ff-para);
+    font-weight: 900;
+    color: #0a0f44;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer {
+    padding-block-end: 5em;
+  }
+}
+
+/* =================== End Of Styling Footer ===================*/
