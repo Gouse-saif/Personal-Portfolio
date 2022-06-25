@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>landing Page</title>
+    <!-- FAVICON ICON  -->
+    <link rel="shortcut icon" href="/assets/images/WEBBER.png" />
+    <!-- CUSTUM CSS -->
+    <link rel="stylesheet" href="/Blog/front-end/landingPage/landingPage.css" />
+    <!-- ADDITIONAL CSS LIBRARY -->
+    <link rel="stylesheet" href="/Blog/assets/vendor/Prism/prism.css" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+  
+    <header>
+      <nav class="nav">
+        <ul class="nav__lists">
+          <li class="nav__items">
+            <a class="nav__links" href="/Blog/blog.html">Home</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="/Blog/front-end/front.html">Front End</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- <div class="banner container">
+    <h1 class="heading">How To Create Landing Page Using 
+      <span class="sketch-highlight">HTML5</span> & 
+      <span class="sketch-highlight">CSS3</span> 
+    </h1>
+  </div> -->
+    </header>
+
+    <div class="postContainer container">
+        <!-- Back to top button -->
+<a  href="#" id="top__btn">
+  <i class='bx bx-up-arrow-alt' style='color:#e6e3e3'  ></i>
+</a>
+      <div class="banner">
+        <h1 class="heading">
+          Beautiful Landing Page Using
+          <span class="sketch-highlight">HTML5</span> &
+          <span class="sketch-highlight">CSS3</span>
+        </h1>
+        <p>Published by Saif Ali on june 24,2022</p>
+      </div>
+
+      <div class="image__container">
+        <img src="/Blog/assets/images/landingpage.png" alt="" />
+      </div>
+
+      <div class="description">
+        <p>
+          Hello Friends, today in this blog you'll learn how to create Beautiful
+          landing page design using only HTML & CSS.
+        </p>
+        <p>
+          Build a beautiful landing pages always improve our frontend web
+          development skills and it's very simple to create such type of awesome
+          landing page. if you're a beginner and you've basic knowledge of HTML
+          & CSS then you'll also create this amazing page with hover animation
+          on Nav bar link and button this not a big deal.
+        </p>
+      </div>
+
+      <!-- TABLE CONTENT -->
+      <div class="table__content">
+        <!-- <div class="table__heading"> -->
+        <ul class="table__lists">
+          <h1>Table Of Contents</h1>
+
+          <li class="table__items">
+            <a class="table__links" href="#pre__requests">Prerequests</a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#folder__structure"
+              >Folder Structure</a
+            >
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#boilerplate__template">
+              Boilerplate Template</a
+            >
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#header__html">
+              Header Section in HTML
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#header__css">
+              Header Section Styling in CSS
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#main__html">
+              Main Section in HTML
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#main__css">
+              Main Section Styling in CSS
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#footer__html">
+              Footer Section in HTML
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#footer__css">
+              Footer Section Styling in CSS
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#complete__html">
+              Complete HTML code
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#complete__css">
+              Complete CSS code
+            </a>
+          </li>
+
+          <li class="table__items">
+            <a class="table__links" href="#source__code">
+              Source Download Link
+            </a>
+          </li>
+        </ul>
+        <!-- </div> -->
+      </div>
+      <!-- END TABLE CONTENT -->
+
+      <!-- START PREREQUESTS SECTION -->
+
+      <section class="pre__requests" id="pre__requests">
+        <h1 class="section__title">Prerequests</h1>
+        <p class="section__desc">
+          I am assuming you have basic understanding of
+          <span class="high__light">HTML</span> &
+          <span class="high__light">CSS</span> to start with this landing page.
+        </p>
+        <p class="section__desc">
+          You have to installed
+          <span class="high__light">Visual Studio code</span> and its extension
+          <span class="high__light"> like Live Server plugin</span> in your
+          computer.
+        </p>
+        <p class="section__desc">
+          Latest Browser should be installed
+          <span class="high__light"> Google Chrome, FireFox Mozilla </span> etc.
+        </p>
+      </section>
+
+      <!-- END PREREQUESTS SECTION -->
+
+      <!-- START FOLDER STRUCTURE SECTION -->
+
+      <section class="folder__structure" id="folder__structure">
+        <div class="section__title">Folder Structure</div>
+
+        <img
+          src="/Blog/assets/images/folderStructure.png"
+          alt=" folder Structure image"
+        />
+
+        <p class="section__desc">
+          First Create a folder name with
+          <span class="high__light">Nature_Landing_Page</span>.
+        </p>
+        <p class="section__desc">
+          In <span class="high__light">Nature_Landing_Page</span> folder create
+          another folder for to kept your all images related to your project in
+          it & name it as <span class="high__light">images</span>.
+        </p>
+        <p class="section__desc">
+          Now create two file in the
+          <span class="high__light">Nature_Landing_Page</span> & name it
+          <span class="high__light">index.html</span> &
+          <span class="high__light">style.css</span>
+        </p>
+      </section>
+
+      <!-- END FOLDER STRUCTURE SECTION -->
+
+      <!-- START BIOLER TEMPLATE SECTION -->
+
+      <section class="boilerplate__template" id="boilerplate__template">
+        <h1 class="section__title">Boilerplate Template</h1>
+
+        <p class="section__desc">
+          This is an <span class="high__light">HTML Boilerplate</span> which
+          shows your <span class="high__light">index.html</span> file content
+          three section known as
+          <span class="high__light">header, main & footer</span>. We'll go
+          through each section one by one with styling concept. To link css file
+          to html file externally this line is written in
+          <span class="high__light">index.html</span> to reference CSS file
+          <span class="high__light"
+            >&lt;link rel="stylesheet" href="style.css"/&gt;</span
+          >
+        </p>
+
+        <pre>
+          <code class="language-html">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang=&quot;en&quot;&gt;
+              &lt;head&gt;
+                &lt;meta charset=&quot;UTF-8&quot; /&gt;
+                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+                &lt;title&gt; Nature Landing Page &lt;/title&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;!-- *********** START OF HEADER SECTION *********** --&gt;
+                  &lt;header&gt;
+                  &lt;/header&gt;
+                &lt;!-- *********** END OF HEADER SECTION *********** --&gt;
+
+
+                &lt;!-- *********** START OF MAIN SECTION *********** --&gt;
+                  &lt;main&gt;
+                  &lt;/main&gt;
+                &lt;!-- *********** END OF MAIN SECTION *********** --&gt;
+
+                &lt;!-- *********** START OF FOOTER SECTION *********** --&gt;
+                  &lt;footer&gt;
+                  &lt;/footer&gt;
+                &lt;!-- *********** END OF FOOTER SECTION *********** --&gt;
+
+            &lt;/body&gt;
+          &lt;/html&gt;
+        </code>
+      </pre>
+      </section>
+
+      <!-- END BIOLER TEMPLATE SECTION -->
+
+      <!-- START HEADER SECTION IN HTML SECTION -->
+
+      <section class="header__html" id="header__html">
+        <h1 class="section__title">Header section in HTML</h1>
+        <p class="section__desc">
+          <span class="high__light">Header Tag</span> or section code in which
+          we have <span class="high__light">nav, ul,li & a</span> tag with a
+          class name as
+          <span class="high__light"
+            >container, nav, nav__list, nav__items & nav__links</span
+          >. You can copy code from below code snippets and paste in your
+          editor.
+        </p>
+
+        <pre>
+          <code class="language-html">
+            &lt;!-- *********** START OF HEADER SECTION *********** --&gt;
+            &lt;header class=&quot;container&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;logo&quot;&gt;
+                &lt;h2&gt;LOGO&lt;/h2&gt;
+              &lt;/a&gt;
+        
+              &lt;nav class=&quot;nav&quot;&gt;
+                &lt;ul class=&quot;nav__list&quot;&gt;
+                  &lt;li class=&quot;nav__items&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Home&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&quot;nav__items&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;About&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&quot;nav__items&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Info&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&quot;nav__items&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Services&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&quot;nav__items&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Contact&lt;/a&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/nav&gt;
+            &lt;/header&gt;
+            &lt;!-- *********** END OF HEADER SECTION *********** --&gt;
+        
+          </code>
+        </pre>
+      </section>
+
+      <!-- END HEADER SECTION IN HTML SECTION -->
+
+      <!-- START HEADER SECTION IN CSS SECTION -->
+
+      <section class="header__css" id="header__css">
+        <h1 class="section__title">Header section styling in css</h1>
+
+        <p class="section__desc">
+          All this code is written in
+          <span class="high__light">style.css</span> file. Before we need to
+          write some basic <span class="high__light">CSS RESET</span> &
+          <span class="high__light">CSS variables</span>.
+        </p>
+
+        <pre>
+          <code class="language-css">
+            *,*::before,*::after{
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            html{
+              box-sizing: inherit;
+            }
+            ul, ol{
+              list-style-type: none;
+            }
+            a{
+              text-decoration: none;
+            }
+            /*--------- CSS VARIBALES ---------*/
+            :root{
+              --clr-dark: #0c3532;
+              --clr-light: #54BAB9;
+              --clr-white-text:#f5f0f0;
+              --clr-dark-text: #0c3f3c;
+            }
+            
+            body{
+              background-color: var(--clr-light);
+              font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .container{
+              width: min(100% - 1rem, 75rem);
+              margin-inline: auto;
+            }
+          </code>
+        </pre>
+
+        <p class="section__desc">
+          Here is header section styling we are using
+          <span class="high__light">Flexbox</span> which is css layout method
+          for one dimensional.
+        </p>
+        <pre>
+          <code class="language-css">
+            /*--------- STYLING FOR HEADER START---------*/
+              header{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                justify-content: space-between;
+              }
+
+              .logo{
+                margin-block-start: 1em;
+                color: var(--clr-dark-text);
+              }
+              .nav, .nav__list{
+                display: flex;
+                column-gap: 3em;
+              }
+              .nav__items{
+                margin-block-start: 1em;
+              }
+
+
+              .nav__links{
+                font-size: 1.2em;
+                font-weight: 500;
+                color: var(--clr-dark-text);
+                padding: .40em .80em;
+                border-radius: 20px;
+                transition: background-color .5s,color .5s;
+              }
+              /* NAVLINK HOVER ANIMATION */
+              .nav__links:hover{
+                background-color: var(--clr-dark);
+                color: var(--clr-white-text);
+              }
+            /*--------- STYLING FOR HEADER END ---------*/
+
+          </code>
+        </pre>
+
+
+      <!-- START OUTPUT OF THE HEADER SECTION  -->
+      <div class="output__section">
+        <h1 class="section__title">Header Output</h1>
+        <img src="/Blog/assets/images/header.png" alt="Header image" />
+      </div>
+      <!-- END OUTPUT OF THE HEADER SECTION  -->
+      </section>
+
+      <!-- END HEADER SECTION IN CSS SECTION -->
+
+
+      <!-- START MAIN SECTION IN HTML SECTION -->
+
+      <section class="main__html" id="main__html">
+        <h1 class="section__title">Main Section In HTML</h1>
+
+        <pre>
+          <code class="language-html">
+
+            &lt;!-- *********** START OF MAIN SECTION *********** --&gt;
+    &lt;main class=&quot;container&quot;&gt;
+      &lt;img class=&quot;nature__image&quot; src=&quot;images/nature.jpg&quot; alt=&quot; Namture image&quot; /&gt;
+
+      &lt;div class=&quot;title&quot;&gt;
+        &lt;h1&gt;LIKE NATURE&lt;/h1&gt;
+        &lt;h1&gt;BE CREATIVE&lt;/h1&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;description&quot;&gt;
+        &lt;p&gt;
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+          perspiciatis dicta, obcaecati ipsa, tempore repudiandae totam deleniti
+          architecto possimus rem quos blanditiis aut fugit reprehenderit!
+          Labore eum incidunt facilis vel! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Officia perspiciatis dicta, obcaecati
+          ipsa, tempore repudiandae totam deleniti architecto possimus rem quos
+          blanditiis aut fugit reprehenderit! Labore eum incidunt facilis vel!
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;btn__container&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;MORE INFO&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;!-- *********** END OF MAIN SECTION *********** --&gt;
+  
+
+          </code>
+        </pre>
+      </section>
+      <!-- END MAIN SECTION IN HTML SECTION -->
+
+      <!-- START MAIN SECTION IN CSS SECTION -->
+
+      <section class="main__css" id="main__css">
+        <h1 class="section__title">Main Section In CSS</h1>
+        <pre>
+          <code class="language-css">
+          /*--------- STYLING FOR MAIN SECTION START ---------*/
+            main{
+              width: 100%;
+              min-height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              row-gap: 2em;
+              margin-block-start: 5em;
+              justify-content: center;
+            }
+            .title{
+              font-size: 1.5em;
+            }
+            .title > h1:nth-child(1){
+              color: var(--clr-dark-text);
+            }
+            .title > h1:nth-child(2){
+              color: var(--clr-white-text);
+            }
+            
+            .description{
+              width: 800px;
+            }
+            .description > p{
+              font-size: 1.2em;
+              line-height: 1.5;
+              color: var(--clr-white-text);
+            }
+            
+            .nature__image{
+              position: absolute;
+              top: 20%;
+              right: 5%;
+              z-index: -1;
+              width: 550px;
+              border-radius: 100% 0% 100% 0% / 43% 64% 36% 57% ;
+            }
+            
+            .btn{
+              background-color: var(--clr-dark);
+              padding: .80em 2em;
+              color: var(--clr-white-text);
+              transition: border-radius .5s;
+            }
+            /* BUTTON HOVER ANIMATION */
+            .btn:hover{
+              border-radius: 10px;
+            }
+          /*--------- STYLING FOR MAIN SECTION END ---------*/
+            
+
+          </code>
+        </pre>
+
+              <!-- START OUTPUT OF THE MAIN SECTION  -->
+      <div class="output__section">
+        <h1 class="section__title">Main Section Output</h1>
+        <img src="/Blog/assets/images/main.png" alt="Header image" />
+      </div>
+      <!-- END OUTPUT OF THE HEADER SECTION  -->
+      </section>
+
+      <!-- END MAIN SECTION IN CSS SECTION -->
+
+
+
+
+      <!-- START FOOTER SECTION IN HTML SECTION -->
+      <section class="footer__html" id="footer__html">
+        <h1 class="section__title">Footer Section In HTML</h1>
+
+        <pre>
+          <code class="language-html">
+            &lt;!-- *********** START OF FOOTER SECTION *********** --&gt;
+            &lt;footer&gt;
+              &lt;ul class=&quot;footer__list&quot;&gt;
+                &lt;li class=&quot;footer__list&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;footer__link&quot;&gt;
+                    &lt;img src=&quot;images/facebook.png&quot; alt=&quot;facebook image&quot; /&gt;
+                  &lt;/a&gt;
+                &lt;/li&gt;
+        
+                &lt;li class=&quot;footer__list&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;footer__link&quot;&gt;
+                    &lt;img src=&quot;images/twitter.png&quot; alt=&quot;twitter image&quot; /&gt;
+                  &lt;/a&gt;
+                &lt;/li&gt;
+        
+                &lt;li class=&quot;footer__list&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;footer__link&quot;&gt;
+                    &lt;img src=&quot;images/instagram.png&quot; alt=&quot;instagram image&quot; /&gt;
+                  &lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/footer&gt;
+            &lt;!-- *********** END OF FOOTER SECTION *********** --&gt;
+          </code>
+        </pre>
+
+      </section>
+
+      <!-- END FOOTER SECTION IN HTML SECTION -->
+
+      <section class="footer__css" id="footer__css">
+        <h1 class="section__title">Footer Section In CSS</h1>
+
+        <pre>
+          <code class="language-css">
+            /*--------- STYLING FOR FOOTER SECTION END ---------*/
+              footer, .footer__list{
+                margin-block-start: 1.8em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 2em;
+              }
+              img{
+                width: 50px;
+              }
+            /*--------- STYLING FOR FOOTER SECTION END ---------*/
+          </code>
+        </pre>
+
+        <div class="output__section">
+          <h1 class="section__title">Footer Section Output</h1>
+          <img src="/Blog/assets/images/footer.png" alt="Header image" />
+        </div>
+      </section>
+
+      <!-- START COMPLETE HTML CODE SECTION -->
+      <section class="complete__html" id="complete__html">
+
+        <h1 class="section__title">Complete HTML Code</h1>
+        <pre>
+          <code class="language-html">
+
+            &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;Nature Landing Page&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- *********** START OF HEADER SECTION *********** --&gt;
+    &lt;header class=&quot;container&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;logo&quot;&gt;
+        &lt;h2&gt;LOGO&lt;/h2&gt;
+      &lt;/a&gt;
+
+      &lt;nav class=&quot;nav&quot;&gt;
+        &lt;ul class=&quot;nav__list&quot;&gt;
+          &lt;li class=&quot;nav__items&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Home&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;nav__items&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;About&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;nav__items&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Info&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;nav__items&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Services&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;nav__items&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;nav__links&quot;&gt;Contact&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- *********** END OF HEADER SECTION *********** --&gt;
+
+    &lt;!-- *********** START OF MAIN SECTION *********** --&gt;
+    &lt;main class=&quot;container&quot;&gt;
+      &lt;img class=&quot;nature__image&quot; src=&quot;images/nature.jpg&quot; alt=&quot; Namture image&quot; /&gt;
+
+      &lt;div class=&quot;title&quot;&gt;
+        &lt;h1&gt;LIKE NATURE&lt;/h1&gt;
+        &lt;h1&gt;BE CREATIVE&lt;/h1&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;description&quot;&gt;
+        &lt;p&gt;
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+          perspiciatis dicta, obcaecati ipsa, tempore repudiandae totam deleniti
+          architecto possimus rem quos blanditiis aut fugit reprehenderit!
+          Labore eum incidunt facilis vel! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Officia perspiciatis dicta, obcaecati
+          ipsa, tempore repudiandae totam deleniti architecto possimus rem quos
+          blanditiis aut fugit reprehenderit! Labore eum incidunt facilis vel!
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;btn__container&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;MORE INFO&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;!-- *********** END OF MAIN SECTION *********** --&gt;
+
+    &lt;!-- *********** START OF FOOTER SECTION *********** --&gt;
+    &lt;footer&gt;
+      &lt;ul class=&quot;footer__list&quot;&gt;
+        &lt;li class=&quot;footer__list&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;footer__link&quot;&gt;
+            &lt;img src=&quot;images/facebook.png&quot; alt=&quot;facebook image&quot; /&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;li class=&quot;footer__list&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;footer__link&quot;&gt;
+            &lt;img src=&quot;images/twitter.png&quot; alt=&quot;twitter image&quot; /&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;li class=&quot;footer__list&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;footer__link&quot;&gt;
+            &lt;img src=&quot;images/instagram.png&quot; alt=&quot;instagram image&quot; /&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/footer&gt;
+    &lt;!-- *********** END OF FOOTER SECTION *********** --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+          </code>
+        </pre>
+      </section>
+
+      <!-- END COMPLETE HTML CODE SECTION -->
+
+
+
+
+      <!-- START COMPLETE CSS CODE SECTION -->
+
+      <section class="complete__css" id="complete__css">
+        <h1 class="section__title">Complete CSS Code</h1>
+        <pre>
+          <code class="language-css">
+            *,*::before,*::after{
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            html{
+              box-sizing: inherit;
+            }
+            ul, ol{
+              list-style-type: none;
+            }
+            a{
+              text-decoration: none;
+            }
+            /*--------- CSS VARIBALES ---------*/
+            :root{
+              --clr-dark: #0c3532;
+              --clr-light: #54BAB9;
+              --clr-white-text:#f5f0f0;
+              --clr-dark-text: #0c3f3c;
+            }
+            
+            body{
+              background-color: var(--clr-light);
+              font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .container{
+              width: min(100% - 1rem, 75rem);
+              margin-inline: auto;
+            }
+            
+            /*--------- STYLING FOR HEADER START---------*/
+            header{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              justify-content: space-between;
+            }
+            
+            .logo{
+              margin-block-start: 1em;
+              color: var(--clr-dark-text);
+            }
+            .nav, .nav__list{
+              display: flex;
+              column-gap: 3em;
+            }
+            .nav__items{
+              margin-block-start: 1em;
+            }
+            
+            
+            .nav__links{
+              font-size: 1.2em;
+              font-weight: 500;
+              color: var(--clr-dark-text);
+              padding: .40em .80em;
+              border-radius: 20px;
+              transition: background-color .5s,color .5s;
+            }
+            /* NAVLINK HOVER ANIMATION */
+            .nav__links:hover{
+              background-color: var(--clr-dark);
+              color: var(--clr-white-text);
+            }
+            /*--------- STYLING FOR HEADER END ---------*/
+            
+            
+            /*--------- STYLING FOR MAIN SECTION START ---------*/
+            
+            main{
+              width: 100%;
+              min-height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              row-gap: 2em;
+              margin-block-start: 5em;
+              justify-content: center;
+            }
+            .title{
+              font-size: 1.5em;
+            }
+            .title >h1:nth-child(1){
+              color: var(--clr-dark-text);
+            }
+            .title >h1:nth-child(2){
+              color: var(--clr-white-text);
+            }
+            
+            .description{
+              width: 800px;
+            }
+            .description > p{
+              font-size: 1.2em;
+              line-height: 1.5;
+              color: var(--clr-white-text);
+            }
+            
+            .nature__image{
+              position: absolute;
+              top: 20%;
+              right: 5%;
+              z-index: -1;
+              width: 550px;
+              border-radius: 100% 0% 100% 0% / 43% 64% 36% 57% ;
+            }
+            
+            .btn{
+              background-color: var(--clr-dark);
+              padding: .80em 2em;
+              color: var(--clr-white-text);
+              transition: border-radius .5s;
+            }
+            /* BUTTON HOVER ANIMATION */
+            .btn:hover{
+              border-radius: 10px;
+            }
+            
+            /*--------- STYLING FOR MAIN SECTION END ---------*/
+            
+            /*--------- STYLING FOR FOOTER SECTION END ---------*/
+            footer, .footer__list{
+              margin-block-start: 1.8em;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              column-gap: 2em;
+            }
+            img{
+              width: 50px;
+            }
+            /*--------- STYLING FOR FOOTER SECTION END ---------*/
+          </code>
+        </pre>
+      </section>
+
+      <!-- END COMPLETE CSS CODE SECTION -->
+
+      <!-- START OF SOURCE CODE SECTION -->
+      <section class="source__code" id="source__code">
+        <h1 class="section__title">Download Source Code Link</h1>
+        <a class="download__btn" href="/Blog/assets/download/Nature_Landing_Page.zip" download="Nature_Landing_Page.zip">DOWNLOAD CODE</a>
+
+        <p class="thank">
+          Thanks for reading this blog till here. 
+        </p>
+      </section>
+
+    </div>
+    <!-- END OF postContainer -->
+
+    <footer class="container">
+      <ul class="footer__container">
+        <li><a href="/index.html">About Me</a></li>
+        <li><a href="/index.html">Contact Me</a></li>
+      </ul>
+      <p> &#169 Copyright 2022. All rights reserved By Udayshankar sir Team</p>
+    </footer>
+
+
+    <!-- ADDITIONAL JAVASCRIPT LIBRARY -->
+    <script src="/Blog/assets/vendor/Prism/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/Blog/assets/script/script.js"></script>
+  </body>
+</html>

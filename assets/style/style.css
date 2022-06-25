@@ -191,6 +191,10 @@ header {
   text-transform: capitalize;
 }
 
+.bx-tada-hover:hover {
+  color: var(--text-clr);
+}
+
 /* =================== End Of Styling Header ===================*/
 /* =================== Start Of Styling Hero ===================*/
 .hero,
