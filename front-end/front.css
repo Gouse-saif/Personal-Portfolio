@@ -1,5 +1,5 @@
 /* CUSTUM CSS RESET FILE */
-@import url("/Blog/CSS-Reset/reset.css");
+@import url("../assets/CSS-Reset/reset.css");
 
 body{
   background-color: var(--bg-color);

@@ -1,5 +1,5 @@
 /* CUSTUM CSS RESET  */
-@import url("/Blog/CSS-Reset/reset.css");
+@import url("../assets/CSS-Reset/reset.css");
 
 body {
   background-color: var(--bg-color);
@@ -14,7 +14,7 @@ body {
 header {
   width: 100%;
   height: 10rem;
-  background: url("/Blog/assets/images/wave-2.svg") no-repeat center;
+  background: url("../assets/image/blog-images/wave-2.svg") no-repeat center;
   background-size: cover;
 }
 .nav .nav__lists {
