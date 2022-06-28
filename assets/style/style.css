@@ -67,7 +67,6 @@ body {
   --bg-clr: #0a0f44;
   --light-text-clr: #f5f4f4;
   --text-clr: #9b6cdd;
-  --an-clr: #845bbd;
   --ff-para: Roboto Mono, monospace;
   --ff-title: Supermercado One, cursive;
 }
@@ -110,51 +109,199 @@ header {
   border-bottom: 2px solid rgba(85, 10, 129, 0.5);
 }
 
-.theme {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 2em;
-       column-gap: 2em;
-}
-
-.toggle {
-  position: relative;
-  display: inline-block;
-  width: 70px;
-  height: 35px;
-  background: rgba(85, 10, 129, 0.2);
-  box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 2px solid rgba(85, 10, 129, 0.4);
-  border-radius: 30px;
-}
-.toggle::after {
-  position: absolute;
-  content: "";
-  background: url("/assets/image/Theme-images/moon.svg");
-  width: 24px;
-  height: 24px;
-  top: 3px;
-  left: 3px;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-
-.checkbox:checked + .toggle::after {
-  left: 34px;
-  background: url("/assets/image/Theme-images/sun.svg") no-repeat center;
-}
-
-.checkbox {
-  display: none;
-}
-
 .logo__img {
   width: 3em;
 }
 
+.switch {
+  display: inline-block;
+  position: relative;
+}
+
+.switch__input {
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.switch__label {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background: rgba(85, 10, 129, 0.2);
+  box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(85, 10, 129, 0.5);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+.switch__indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(-65%);
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #7B7B7B;
+  border-radius: 9999px;
+  box-shadow: 10px 0px 0 0 rgba(0, 0, 0, 0.2) inset;
+}
+.switch__indicator::before, .switch__indicator::after {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: #FFFFFF;
+  border-radius: 9999px;
+}
+.switch__indicator::before {
+  top: 7px;
+  left: 7px;
+  width: 9px;
+  height: 9px;
+  background-color: #FFFFFF;
+  opacity: 0.6;
+}
+.switch__indicator::after {
+  bottom: 8px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #FFFFFF;
+  opacity: 0.8;
+}
+
+.switch__decoration {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #FFFFFF;
+  border-radius: 9999px;
+  -webkit-animation: twinkle 0.8s infinite -0.6s;
+          animation: twinkle 0.8s infinite -0.6s;
+}
+.switch__decoration::before, .switch__decoration::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #FFFFFF;
+  border-radius: 9999px;
+}
+.switch__decoration::before {
+  top: -20px;
+  left: 10px;
+  opacity: 1;
+  -webkit-animation: twinkle 0.6s infinite;
+          animation: twinkle 0.6s infinite;
+}
+.switch__decoration::after {
+  top: -7px;
+  left: 30px;
+  -webkit-animation: twinkle 0.6s infinite -0.2s;
+          animation: twinkle 0.6s infinite -0.2s;
+}
+
+@-webkit-keyframes twinkle {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.2;
+  }
+}
+.switch__indicator, .switch__indicator::before, .switch__indicator::after {
+  transition: all 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+.switch__input:checked + .switch__label {
+  background: rgba(85, 10, 129, 0.2);
+  box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(85, 10, 129, 0.5);
+}
+.switch__input:checked + .switch__label .switch__indicator {
+  background-color: #ECD21F;
+  box-shadow: none;
+  transform: translate(-50%, -50%) translateX(65%);
+}
+.switch__input:checked + .switch__label .switch__indicator::before, .switch__input:checked + .switch__label .switch__indicator::after {
+  display: none;
+}
+.switch__input:checked + .switch__label .switch__decoration {
+  top: 50%;
+  transform: translate(0%, -50%);
+  -webkit-animation: cloud 8s linear infinite;
+          animation: cloud 8s linear infinite;
+  width: 20px;
+  height: 20px;
+}
+.switch__input:checked + .switch__label .switch__decoration::before {
+  width: 10px;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  left: -8px;
+  -webkit-animation: none;
+          animation: none;
+}
+.switch__input:checked + .switch__label .switch__decoration::after {
+  width: 15px;
+  height: 15px;
+  top: auto;
+  bottom: 0;
+  left: 16px;
+  -webkit-animation: none;
+          animation: none;
+}
+.switch__input:checked + .switch__label .switch__decoration, .switch__input:checked + .switch__label .switch__decoration::before, .switch__input:checked + .switch__label .switch__decoration::after {
+  border-radius: 9999px 9999px 0 0;
+}
+.switch__input:checked + .switch__label .switch__decoration::after {
+  border-bottom-right-radius: 9999px;
+}
+
+@-webkit-keyframes cloud {
+  0% {
+    transform: translate(0%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(0%, -50%);
+  }
+}
+
+@keyframes cloud {
+  0% {
+    transform: translate(0%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(0%, -50%);
+  }
+}
 /* =================== Navbar Nested Query ===================*/
 .navbar {
   position: fixed;
@@ -1149,6 +1296,37 @@ button {
   }
 }
 /* =================== End Of Styling Contact ===================*/
+/* =================== Start Of Styling Blog ===================*/
+.blog {
+  width: 100%;
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  background: rgba(85, 10, 129, 0.2);
+  box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--text-clr);
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+
+.blog__link {
+  position: relative;
+  background-color: var(--text-clr);
+  color: var(--light-text-clr);
+  padding: 1.2em 1.6em;
+  font-family: var(--ff-para);
+  font-size: 1.5em;
+  transition: outline 0.5s, outline-offset 0.8s;
+}
+
+.blog__link:hover {
+  outline: 2px solid var(--text-clr);
+  outline-offset: 0.3em;
+}
+
+/* =================== End Of Styling Blog ===================*/
 /* =================== Start Of Styling Footer ===================*/
 footer {
   width: 100%;

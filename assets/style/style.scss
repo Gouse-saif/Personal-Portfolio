@@ -69,7 +69,7 @@ body {
   --light-text-clr: #f5f4f4;
   --text-clr: #9b6cdd;
 
-  --an-clr: #845bbd;
+  // --an-clr: #845bbd;
 
   --ff-para: Roboto Mono, monospace;
   --ff-title: Supermercado One, cursive;
@@ -124,49 +124,239 @@ header {
   @include Glass__Morp();
   border-bottom: 2px solid rgba(85, 10, 129, 0.5);
 }
-
-.theme {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2em;
-}
-
-.toggle {
-  position: relative;
-  display: inline-block;
-  width: 70px;
-  height: 35px;
-
-  @include Glass__Morp();
-  border: 2px solid rgba(85, 10, 129, 0.4);
-  border-radius: 30px;
-  &::after {
-    position: absolute;
-    content: "";
-    background: url("/assets/image/Theme-images/moon.svg");
-    width: 24px;
-    height: 24px;
-    top: 3px;
-    left: 3px;
-    transition: all 0.5s;
-    cursor: pointer;
-  }
-}
-
-.checkbox:checked + .toggle::after {
-  left: 34px;
-  background: url("/assets/image/Theme-images/sun.svg") no-repeat center;
-}
-// .checkbox:checked + .toggle {
-// }
-.checkbox {
-  display: none;
-}
-
 .logo__img {
   width: 3em;
 }
+
+
+// DARK AND LIGHT TOGGLE BUTTON ANIMATION
+.switch {
+  display: inline-block;
+  position: relative;
+}
+
+.switch__input {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.switch__label {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height:40px;
+  @include Glass__Morp();
+  border: 2px solid rgba(85, 10, 129, 0.5);
+  // background-color: #2B2B2B;
+  // background-color: var(--bg-clr);
+  // border: 3px solid var(--text-clr);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(.46,.03,.52,.96);
+}
+
+.switch__indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(-65%);
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #7B7B7B;
+  border-radius: 9999px;
+  box-shadow: 10px 0px 0 0 rgba(#000000, 0.2) inset;
+
+  &::before,
+  &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      background-color: #FFFFFF;
+      border-radius: 9999px;
+  }
+
+  &::before {
+      top: 7px;
+      left: 7px;
+      width: 9px;
+      height: 9px;
+      background-color: #FFFFFF;
+      opacity: 0.6;
+  }
+
+  &::after {
+      bottom: 8px;
+      right: 6px;
+      width: 8px;
+      height: 8px;
+      background-color: #FFFFFF;
+      opacity: 0.8;
+  }
+}
+
+.switch__decoration {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #FFFFFF;
+  border-radius: 9999px;
+  animation: twinkle 0.8s infinite -0.6s;
+
+  &::before,
+  &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: #FFFFFF;
+      border-radius: 9999px;
+  }
+
+  &::before {
+      top: -20px;
+      left: 10px;
+      opacity: 1;
+      animation: twinkle 0.6s infinite;
+  }
+
+  &::after {
+      top: -7px;
+      left: 30px;
+      animation: twinkle 0.6s infinite -0.2s;
+  }
+}
+
+@keyframes twinkle {
+  50% { opacity: 0.2; }
+}
+
+.switch__indicator {
+  &,
+  &::before,
+  &::after {
+      transition: all 0.4s cubic-bezier(.46,.03,.52,.96);
+  }
+}
+
+.switch__input:checked + .switch__label {
+  // background-color: #8FB5F5;
+  // border-color: #347CF8;
+  @include Glass__Morp();
+  border: 2px solid rgba(85, 10, 129, 0.5);
+
+  .switch__indicator {
+      background-color: #ECD21F;
+      box-shadow: none;
+      transform: translate(-50%, -50%) translateX(65%);
+
+      &::before,
+      &::after {
+          display: none;
+      }
+  }
+
+  .switch__decoration {
+      top: 50%;
+      transform: translate(0%, -50%);
+      animation: cloud 8s linear infinite;
+
+      width: 20px;
+      height: 20px;
+
+      &::before {
+          width: 10px;
+          height: 10px;
+          top: auto;
+          bottom: 0;
+          left: -8px;
+          animation: none;
+      }
+
+      &::after {
+          width: 15px;
+          height: 15px;
+          top: auto;
+          bottom: 0;
+          left: 16px;
+          animation: none;
+      }
+
+      &,
+      &::before,
+      &::after {
+          border-radius: 9999px 9999px 0 0;
+      }
+
+      &::after {
+          border-bottom-right-radius: 9999px;
+      }
+  }
+}
+
+@keyframes cloud {
+  0% {
+      transform: translate(0%, -50%);
+  }
+  50% {
+      transform: translate(-50%, -50%);
+  }
+  100% {
+      transform: translate(0%, -50%);
+  }
+}
+
+// END DARK AND LIGHT TOGGLE BUTTON ANIMATION
+
+
+// .theme {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   column-gap: 2em;
+// }
+
+// .toggle {
+//   position: relative;
+//   display: inline-block;
+//   width: 70px;
+//   height: 35px;
+
+//   @include Glass__Morp();
+//   border: 2px solid rgba(85, 10, 129, 0.4);
+//   border-radius: 30px;
+//   &::after {
+//     position: absolute;
+//     content: "";
+//     background: url("/assets/image/Theme-images/moon.svg");
+//     width: 24px;
+//     height: 24px;
+//     top: 3px;
+//     left: 3px;
+//     transition: all 0.5s;
+//     cursor: pointer;
+//   }
+// }
+
+// .checkbox:checked + .toggle::after {
+//   left: 34px;
+//   background: url("/assets/image/Theme-images/sun.svg") no-repeat center;
+// }
+// .checkbox {
+//   display: none;
+// }
+
+
 
 /* =================== Navbar Nested Query ===================*/
 
@@ -1118,6 +1308,37 @@ button {
 }
 
 /* =================== End Of Styling Contact ===================*/
+
+/* =================== Start Of Styling Blog ===================*/
+
+.blog{
+  width: 100%;
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  @include Glass__Morp();
+  border: 1px solid var(--text-clr);
+  margin-block-end: 1em;
+}
+
+.blog__link{
+  position: relative;
+  background-color: var(--text-clr);
+  color: var(--light-text-clr);
+  padding: 1.2em 1.6em;
+  font-family: var(--ff-para);
+  font-size: 1.5em;
+  transition: outline .5s, outline-offset .8s;
+}
+.blog__link:hover{
+  outline: 2px solid var(--text-clr);
+  outline-offset: .3em;
+}
+/* =================== End Of Styling Blog ===================*/
+
+
+
+
 
 /* =================== Start Of Styling Footer ===================*/
 
