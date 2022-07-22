@@ -89,23 +89,22 @@ var swiperTestimonial = new Swiper(".testimonial__container", {
   },
 });
 
+// Script For Bottom To Top Scroll
 
-// ======= Script For Form Section =======
+$(document).ready(function(){
 
-function sendEmail(){
-  Email.send({
-    
-    SecureToken : "077496ac-439c-42ba-8408-93b80d455409",
-    // Host : "smtp.gmail.com",
-    // Username : "abc@gmail.com",
-    // Password : "xyz",
-    To : 'saifaligouse15@gmail.com',
-    From : document.getElementById("email").value,
-    Subject : "New Mail from Portfolio website",
-    Body : "Name: " + document.getElementById("name").value
-          + "<br> Email: " + document.getElementById("email").value
-          + "<br> Message: " + document.getElementById("message").value
-  }).then(
-    message => alert("Mail Send Success")
-  );
-}
+  $(window).scroll(function(){
+    var showAfter = 60;
+    if($(this).scrollTop() > showAfter){
+      $('#top__btn').fadeIn();
+    }else{
+      $('#top__btn').fadeOut();
+    }
+  });
+  
+  $('#top__btn').click(function(){
+    $('html, body').animate({scrollTop : 0}, 800);
+    return false;
+  });
+  
+  });

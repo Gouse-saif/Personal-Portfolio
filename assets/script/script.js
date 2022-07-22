@@ -1,17 +1,27 @@
-$(document).ready(function(){
+const btn = document.getElementById("button");
 
-$(window).scroll(function(){
-  var showAfter = 60;
-  if($(this).scrollTop() > showAfter){
-    $('#top__btn').fadeIn();
-  }else{
-    $('#top__btn').fadeOut();
-  }
+document.getElementById("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  btn.value = "Sending...";
+
+  const serviceID = "service_c8edsa8";
+  const templateID = "template_v8x9bai";
+
+  emailjs.sendForm(serviceID, templateID, this).then(
+    () => {
+      btn.value = "Send Email";
+      // alert("Email Sent Successfully!");
+      // console.log("hello");
+       event.target.reset();
+
+    },
+    (err) => {
+      // btn.value = "Send Email";
+      alert(JSON.stringify(err));
+    }
+  );
 });
 
-$('#top__btn').click(function(){
-  $('html, body').animate({scrollTop : 0}, 800);
-  return false;
-});
 
-});
+

@@ -1,0 +1,116 @@
+/* CUSTUM CSS RESET FILE */
+@import url("../assets/CSS-Reset/reset.css");
+
+body{
+  background-color: var(--bg-color);
+  line-height: 1.2;
+}
+.container{
+  margin-inline: 1.5em;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border: 5px ridge var(--bg-hover-color);
+  color: var(--white-color);
+}
+.title{
+  font-family: var(--title-text);
+}
+nav > a{
+  font-family: var(--title-text);
+  font-size: 2em;
+  font-weight: 900;
+  color: var(--white-color);
+}
+
+.frontContainer{
+  background-color: var(--bg-hover-color);
+  display: grid;
+  place-items: center;
+  margin-block-start: 1em;
+  padding: 1em;
+}
+
+.project__container{
+  display: grid;
+  place-items: center;
+  grid-row-gap: 2em;
+  margin-block-start: 1em;
+}
+input{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1em;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  font-size: 1.2em;
+  font-family: var(--para-text);
+  font-weight: 900;
+  text-align: center;
+}
+
+
+.list{
+  display: grid;
+  gap: 1em;
+}
+.project__card{
+  background-color: var(--bg-color);
+  display: flex;
+  gap: 1em;
+  padding: 1.5em;
+  border-radius: 8px;
+}
+
+.project__card__desc{
+  display: flex;
+  flex-direction: column;
+  row-gap: .45em;
+  color: var(--white-color);
+}
+.project__card__desc, span, p{
+  font-family: var(--para-text);
+  font-weight: 900;
+}
+.project__title{
+  font-family: var(--title-text);
+}
+.author{
+  display: flex;
+  align-items: center;
+  column-gap: 2em;
+}
+.author__img{
+  background-color: var(--bg-hover-color);
+  border-radius: 50%;
+  object-fit: cover;
+}
+.project__view{
+  margin-block-start: .60em;
+  border-radius: 6px;
+  width: fit-content;
+  padding: .45em 1em;
+  color: var(--white-color);
+  background-color: var(--bg-hover-color);
+  transition: all .5s;
+}
+
+.project__view:hover{
+  color: var(--bg-hover-color);
+  background-color: var(--white-color);
+}
+@media screen and (max-width:650px) {
+  .project__card{
+    flex-direction: column;
+  }
+  .project__card > img{
+    margin-inline: auto;
+  }
+}
+
+

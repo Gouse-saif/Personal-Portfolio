@@ -69,8 +69,6 @@ body {
   --light-text-clr: #f5f4f4;
   --text-clr: #9b6cdd;
 
-  // --an-clr: #845bbd;
-
   --ff-para: Roboto Mono, monospace;
   --ff-title: Supermercado One, cursive;
 }
@@ -122,7 +120,7 @@ header {
 .header__Color {
   // Glassmorphism code
   @include Glass__Morp();
-  border-bottom: 2px solid rgba(85, 10, 129, 0.5);
+  border-bottom: 0.5px solid rgba(85, 10, 129, 0.5);
 }
 .logo__img {
   width: 3em;
@@ -253,7 +251,7 @@ header {
   // background-color: #8FB5F5;
   // border-color: #347CF8;
   @include Glass__Morp();
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 1px solid rgba(85, 10, 129, 0.5);
 
   .switch__indicator {
       background-color: #ECD21F;
@@ -368,7 +366,7 @@ header {
   transform: translateX(-50%);
   // Glassmorphism code
   @include Glass__Morp();
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 0.5px solid rgba(85, 10, 129, 0.5);
   border-radius: 10px;
 
   .nav__menu .nav__item {
@@ -421,7 +419,7 @@ header {
   height: 400px;
   @include Glass__Morp();
   border-radius: 10px;
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 0.5px solid rgba(85, 10, 129, 0.5);
   // transform: translateY(0);
   span {
     color: var(--text-clr);
@@ -554,7 +552,6 @@ header {
 /* =================== End Of Styling Hero ===================*/
 
 /* =================== Start Of Styling About Us ===================*/
-
 .about {
   width: 100%;
   min-height: 100vh;
@@ -587,7 +584,7 @@ header {
   width: 300px;
   height: 400px;
   @include Glass__Morp();
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 0.5px solid rgba(85, 10, 129, 0.5);
   transform-style: preserve-3d;
   transform-style: preserve-3d(1000px);
   transition: 1s;
@@ -659,7 +656,7 @@ header {
     a {
       padding: 0.45em 0.45em 0 0.45em;
       @include Glass__Morp();
-      border: 2px solid rgba(85, 10, 129, 0.4);
+      border: 0.5px solid rgba(85, 10, 129, 0.4);
       border-radius: 10px;
       color: var(--light-text-clr);
     }
@@ -667,7 +664,7 @@ header {
 
   .download__btn a {
     @include Glass__Morp();
-    border: 2px solid rgba(85, 10, 129, 0.4);
+    border: 0.5px solid rgba(85, 10, 129, 0.4);
     border-radius: 10px;
     padding: 0.6em 1em;
     color: var(--light-text-clr);
@@ -675,7 +672,6 @@ header {
     font-weight: 600;
   }
 }
-
 /* =================== End Of Styling About Us ===================*/
 
 /* =================== Start Of Styling Skill ===================*/
@@ -703,6 +699,7 @@ header {
   padding: 1.4em 1em;
   background-color: rgba($color: #ffffff, $alpha: 0.06);
   @include Glass__Morp();
+  border: 0.5px solid rgba(85, 10, 129, 0.4);
   // box-shadow: 0 20px 30px rgba($color: #000000, $alpha: 0.2);
   border-radius: 8px;
 
@@ -1127,7 +1124,6 @@ header {
     }
   }
 }
-
 /* =================== End Of Styling Work ===================*/
 
 /* =================== Start Of Styling Testimonial ===================*/
@@ -1253,7 +1249,7 @@ form {
   display: flex;
   flex-direction: column;
   row-gap: 2em;
-  padding: 3em 2em;
+  padding: 2.5em 2em;
   @include Glass__Morp();
   border: 0.5px solid var(--text-clr);
   border-radius: 8px;
@@ -1264,9 +1260,7 @@ form {
   font-family: var(--ff-para);
   margin-top: 10px;
 
-  span {
-    position: absolute;
-    left: 0;
+  label {
     color: var(--text-clr);
     transition: transform 500ms;
   }
@@ -1284,15 +1278,19 @@ textarea {
   font-weight: 900;
 }
 
-.input__box input:focus ~ span,
-.input__box input:valid ~ span,
-.input__box textarea:focus ~ span,
-.input__box textarea:valid ~ span {
-  color: var(--text-clr);
-  transform: translateY(-2em);
+#first__name__err, #email__name__err{
+  color: #ff0000;
 }
 
-button {
+// .input__box input:focus ~ span,
+// .input__box input:valid ~ span,
+// .input__box textarea:focus ~ span,
+// .input__box textarea:valid ~ span {
+//   color: var(--text-clr);
+//   transform: translateY(-2em);
+// }
+
+#button {
   border: 0.5px solid var(--text-clr);
   background-color: transparent;
   padding: 0.8em 1.4em;
@@ -1317,8 +1315,7 @@ button {
   display: grid;
   place-items: center;
   @include Glass__Morp();
-  border: 1px solid var(--text-clr);
-  margin-block-end: 1em;
+  border: 0.5px solid var(--text-clr);
 }
 
 .blog__link{

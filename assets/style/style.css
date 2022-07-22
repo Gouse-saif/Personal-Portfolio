@@ -106,7 +106,7 @@ header {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border-bottom: 2px solid rgba(85, 10, 129, 0.5);
+  border-bottom: 0.5px solid rgba(85, 10, 129, 0.5);
 }
 
 .logo__img {
@@ -236,7 +236,7 @@ header {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 1px solid rgba(85, 10, 129, 0.5);
 }
 .switch__input:checked + .switch__label .switch__indicator {
   background-color: #ECD21F;
@@ -313,7 +313,7 @@ header {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 0.5px solid rgba(85, 10, 129, 0.5);
   border-radius: 10px;
 }
 .navbar .nav__menu .nav__item {
@@ -364,7 +364,7 @@ header {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 0.5px solid rgba(85, 10, 129, 0.5);
 }
 .card span {
   color: var(--text-clr);
@@ -510,7 +510,7 @@ header {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 2px solid rgba(85, 10, 129, 0.5);
+  border: 0.5px solid rgba(85, 10, 129, 0.5);
   transform-style: preserve-3d;
   transform-style: preserve-3d(1000px);
   transition: 1s;
@@ -582,7 +582,7 @@ header {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 2px solid rgba(85, 10, 129, 0.4);
+  border: 0.5px solid rgba(85, 10, 129, 0.4);
   border-radius: 10px;
   color: var(--light-text-clr);
 }
@@ -591,7 +591,7 @@ header {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 2px solid rgba(85, 10, 129, 0.4);
+  border: 0.5px solid rgba(85, 10, 129, 0.4);
   border-radius: 10px;
   padding: 0.6em 1em;
   color: var(--light-text-clr);
@@ -626,6 +626,7 @@ header {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  border: 0.5px solid rgba(85, 10, 129, 0.4);
   border-radius: 8px;
 }
 .skill__content__container .skill__title {
@@ -1240,7 +1241,7 @@ form {
   display: flex;
   flex-direction: column;
   row-gap: 2em;
-  padding: 3em 2em;
+  padding: 2.5em 2em;
   background: rgba(85, 10, 129, 0.2);
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
@@ -1254,9 +1255,7 @@ form {
   font-family: var(--ff-para);
   margin-top: 10px;
 }
-.input__box span {
-  position: absolute;
-  left: 0;
+.input__box label {
   color: var(--text-clr);
   transition: transform 500ms;
 }
@@ -1273,15 +1272,11 @@ textarea {
   font-weight: 900;
 }
 
-.input__box input:focus ~ span,
-.input__box input:valid ~ span,
-.input__box textarea:focus ~ span,
-.input__box textarea:valid ~ span {
-  color: var(--text-clr);
-  transform: translateY(-2em);
+#first__name__err, #email__name__err {
+  color: #ff0000;
 }
 
-button {
+#button {
   border: 0.5px solid var(--text-clr);
   background-color: transparent;
   padding: 0.8em 1.4em;
@@ -1306,9 +1301,7 @@ button {
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--text-clr);
-  -webkit-margin-after: 1em;
-          margin-block-end: 1em;
+  border: 0.5px solid var(--text-clr);
 }
 
 .blog__link {
