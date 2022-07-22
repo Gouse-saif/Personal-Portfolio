@@ -105,6 +105,7 @@ section {
 /* =================== Start Of Styling Header ===================*/
 
 header {
+  height: 10%;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -123,7 +124,7 @@ header {
   border-bottom: 0.5px solid rgba(85, 10, 129, 0.5);
 }
 .logo__img {
-  width: 3em;
+  width: 5em;
 }
 
 
@@ -415,12 +416,13 @@ header {
 
 .card {
   margin-top: 3.5em;
-  width: 340px;
-  height: 400px;
+  width: 280px;
+  height: 350px;
   @include Glass__Morp();
   border-radius: 10px;
   border: 0.5px solid rgba(85, 10, 129, 0.5);
   // transform: translateY(0);
+  text-align: center;
   span {
     color: var(--text-clr);
     text-align: center;
@@ -549,9 +551,16 @@ header {
   }
 }
 
+@media screen and (max-width:400px) {
+  .hero{
+    margin-top: 1em;
+  }
+}
+
 /* =================== End Of Styling Hero ===================*/
 
 /* =================== Start Of Styling About Us ===================*/
+
 .about {
   width: 100%;
   min-height: 100vh;
@@ -567,7 +576,8 @@ header {
     text-align: center;
     color: var(--text-clr);
     font-family: var(--ff-title);
-    margin-block-end: 0.9em;
+    margin-block-end: 0.2em;
+    margin-block-start: 1em;
   }
 }
 
@@ -581,8 +591,8 @@ header {
 .folded__card {
   margin: auto;
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 280px;
+  height: 350px;
   @include Glass__Morp();
   border: 0.5px solid rgba(85, 10, 129, 0.5);
   transform-style: preserve-3d;
@@ -607,18 +617,32 @@ header {
   border-radius: 10px;
   cursor: pointer;
   img {
+    margin-block-start: 2em;
+    margin-inline-start: 2.5em;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    // width: 100%;
+    // height: 100%;
+    // object-fit: cover;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 10px;
-    background-color: #9b6cdd;
+    // background-color: #9b6cdd;
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    // border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-color: var(--text-clr);
   }
 }
+// .hero__image img {
+//   width: 200px;
+//   height: 240px;
+//   object-fit: cover;
+//   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+//   background-color: var(--text-clr);
+// }
 
 .folded__card:hover .img__card {
   // transform: rotateY(-180deg);
@@ -672,6 +696,7 @@ header {
     font-weight: 600;
   }
 }
+
 /* =================== End Of Styling About Us ===================*/
 
 /* =================== Start Of Styling Skill ===================*/
@@ -801,7 +826,7 @@ header {
   position: relative;
   overflow: hidden;
   // width: 40%;
-  min-width: 450px;
+  min-width: 440px;
   display: grid;
   grid-template-columns: 1fr;
   // grid-template-rows: repeat(2, 1fr);
@@ -828,6 +853,7 @@ header {
     }
     p {
       font-family: var(--ff-para);
+      text-align: center;
     }
   }
 }
@@ -1107,9 +1133,10 @@ header {
 
       h2,
       a,
-      i {
+      span {
         color: var(--text-clr);
         font-family: var(--ff-para);
+        font-size: 1.2em;
       }
     }
   }
@@ -1124,6 +1151,7 @@ header {
     }
   }
 }
+
 /* =================== End Of Styling Work ===================*/
 
 /* =================== Start Of Styling Testimonial ===================*/

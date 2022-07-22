@@ -88,6 +88,7 @@ section {
 
 /* =================== Start Of Styling Header ===================*/
 header {
+  height: 10%;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -110,7 +111,7 @@ header {
 }
 
 .logo__img {
-  width: 3em;
+  width: 5em;
 }
 
 .switch {
@@ -357,14 +358,15 @@ header {
 
 .card {
   margin-top: 3.5em;
-  width: 340px;
-  height: 400px;
+  width: 280px;
+  height: 350px;
   background: rgba(85, 10, 129, 0.2);
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
   border: 0.5px solid rgba(85, 10, 129, 0.5);
+  text-align: center;
 }
 .card span {
   color: var(--text-clr);
@@ -474,6 +476,11 @@ header {
   text-align: center;
 }
 
+@media screen and (max-width: 400px) {
+  .hero {
+    margin-top: 1em;
+  }
+}
 /* =================== End Of Styling Hero ===================*/
 /* =================== Start Of Styling About Us ===================*/
 .about {
@@ -490,8 +497,10 @@ header {
   text-align: center;
   color: var(--text-clr);
   font-family: var(--ff-title);
-  -webkit-margin-after: 0.9em;
-          margin-block-end: 0.9em;
+  -webkit-margin-after: 0.2em;
+          margin-block-end: 0.2em;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
 }
 
 .folded__card__container {
@@ -504,8 +513,8 @@ header {
 .folded__card {
   margin: auto;
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 280px;
+  height: 350px;
   background: rgba(85, 10, 129, 0.2);
   box-shadow: 0 4px 30px rgba(85, 10, 129, 0.2);
   backdrop-filter: blur(15px);
@@ -530,18 +539,22 @@ header {
   cursor: pointer;
 }
 .img__card img {
+  -webkit-margin-before: 2em;
+          margin-block-start: 2em;
+  -webkit-margin-start: 2.5em;
+          margin-inline-start: 2.5em;
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border-radius: 10px;
-  background-color: #9b6cdd;
+  width: 200px;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: var(--text-clr);
 }
 
 .folded__card:hover .img__card {
@@ -757,7 +770,7 @@ header {
 .professional__container {
   position: relative;
   overflow: hidden;
-  min-width: 450px;
+  min-width: 440px;
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
@@ -786,6 +799,7 @@ header {
 }
 .professional__container .professional__box p {
   font-family: var(--ff-para);
+  text-align: center;
 }
 
 .tron-button__left-line {
@@ -912,11 +926,9 @@ header {
     justify-content: center;
     align-items: center;
   }
-
   .skill__container {
     min-width: 340px;
   }
-
   .professional__container {
     min-width: 340px;
   }
@@ -1096,9 +1108,10 @@ header {
 }
 .portfolio__container .portfolio__card .work__content h2,
 .portfolio__container .portfolio__card .work__content a,
-.portfolio__container .portfolio__card .work__content i {
+.portfolio__container .portfolio__card .work__content span {
   color: var(--text-clr);
   font-family: var(--ff-para);
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 450px) {
